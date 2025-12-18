@@ -11,7 +11,7 @@ import tv from '@/public/assets/image/tv.png';
 const  Hero = ()=> {
     return (
     
-      <section className="relative min-h-screen flex items-center pt-5">
+      <section className="relative min-h-screen flex items-center pt-5 mt-20 lg:mt-0 md:mt-0 sm:mt-20">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-green-50/50 rounded-l-[100px] -z-10 hidden lg:block" />
       <div className="absolute top-[10%] left-[5%] w-64 h-64 bg-green-200/30 blur-[100px] rounded-full -z-10" />

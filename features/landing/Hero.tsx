@@ -26,9 +26,9 @@ const  Hero = ()=> {
             <Sparkles size={16} /> <span>Re-use, Re-love, Re-cycle</span>
           </div>
           <h1 className="text-5xl lg:text-7xl font-black text-gray-900 leading-[1.1] mb-8">
-            Barang Bekas Jadi <br />
+              Dari Bekas Jadi <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-400">
-              Cerita Baru.
+                Berkelas.
             </span>
           </h1>
           <p className="text-lg text-gray-500 mb-10 max-w-md leading-relaxed">

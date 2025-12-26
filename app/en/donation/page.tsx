@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 
 export const metadata: Metadata = {
-    title: "Jadi Bagian dari Perubahan",
+  title: "Be Part of the Change",
   };
   
 

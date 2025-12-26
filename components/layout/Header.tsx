@@ -38,7 +38,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center">
 
         {/* Brand/Logo */}
-        <Link href="/" className="group flex items-center gap-2.5">
+        <Link href="/id" className="group flex items-center gap-2.5">
           <div className="bg-green-600 p-1.5 rounded-xl group-hover:rotate-12 transition-transform duration-300">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg>
           </div>

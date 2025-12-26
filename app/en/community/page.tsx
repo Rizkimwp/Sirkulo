@@ -11,7 +11,10 @@ import {
   Share2,
 } from 'lucide-react';
 import Image from 'next/image';
-import CommunityFeatures from '@/features/community/ComunityFeature';
+import CommunityFeatures from '@/features/community/en/ComunityFeature';
+import { Metadata } from 'next'
+
+
 
 // --- Mock Data ---
 const stats = [

@@ -1,7 +1,16 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import { JWT } from "next-auth/jwt";
+import { Account } from "next-auth";
+// types/auth.ts
+export interface BackendUser {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+}
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -14,9 +23,15 @@ export const authOptions = {
   },
 
   callbacks: {
-    async jwt({ token, account }) {
-      // Hanya saat login pertama
-      if (account?.id_token) {
+    async jwt({
+      token,
+      account,
+    }: {
+      token: JWT;
+      account?: Account | null;
+    }): Promise<JWT> {
+      // hanya saat login pertama via Google
+      if (account?.provider === "google" && account.id_token) {
         const res = await fetch(
           `${process.env.NEXT_PUBLIC_API_URL}/user/google`,
           {
@@ -34,7 +49,10 @@ export const authOptions = {
           throw new Error("Failed to sync Google login");
         }
 
-        const data = await res.json();
+        const data: {
+          accessToken: string;
+          user: BackendUser;
+        } = await res.json();
 
         token.accessToken = data.accessToken;
         token.user = data.user;
@@ -44,8 +62,14 @@ export const authOptions = {
     },
 
     async session({ session, token }) {
-      session.user = token.user;
-      session.accessToken = token.accessToken;
+      if (token.user) {
+        session.user = token.user;
+      }
+
+      if (token.accessToken) {
+        session.accessToken = token.accessToken;
+      }
+
       return session;
     },
   },

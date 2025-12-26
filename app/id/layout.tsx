@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
+import ".././globals.css";
+
 import Providers from "@/providers/SessionProvider";
 import TanStackProvider from "@/providers/TanstackProvider";
 import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "@/providers/AuthProvider";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,7 +32,28 @@ export default function RootLayout({
       <body
         className={`$${inter.variable} antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <Providers>
+          <TanStackProvider>
+
+
+            <Header />
+
+            <main className="flex-grow ">
+              <Toaster
+
+                position="top-center"
+                toastOptions={{
+                  duration: 3000,
+                }}
+              />
+              <AuthProvider>
+                {children}
+              </AuthProvider> {/* ← INI pengganti Outlet */}
+            </main>
+
+            <Footer />
+          </TanStackProvider>
+        </Providers>
       </body>
     </html>
   );

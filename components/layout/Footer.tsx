@@ -6,9 +6,9 @@ const Footer = () => (
     <div className="max-w-6xl mx-auto">
       <p>&copy; {new Date().getFullYear()}  Sirkulo: Dari Rumah ke Rumah, Tanpa Jadi Sampah</p>
       <div className="mt-2 space-x-4">
-        <Link href="/about" className="hover:text-white transition duration-200">Tentang Kami</Link>
-        <Link href="/faq" className="hover:text-white transition duration-200">FAQ</Link>
-        <Link href="/kebijakan" className="hover:text-white transition duration-200">Kebijakan Privasi</Link>
+        <Link href="/id/about" className="hover:text-white transition duration-200">Tentang Kami</Link>
+        <Link href="/id/faq" className="hover:text-white transition duration-200">FAQ</Link>
+        <Link href="/id/kebijakan" className="hover:text-white transition duration-200">Kebijakan Privasi</Link>
       </div>
     </div>
   </footer>

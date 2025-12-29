@@ -111,7 +111,22 @@ export default function Header() {
           </div>
 
         </nav>
-
+        <div className=" lg:hidden flex items-center gap-2">
+          <Link
+            href="/id"
+            className={`px-2 py-1 text-xs font-bold rounded ${lang === 'id' ? 'bg-green-600 text-white' : 'text-gray-500'
+              }`}
+          >
+            ID
+          </Link>
+          <Link
+            href="/en"
+            className={`px-2 py-1 text-xs font-bold rounded ${lang === 'en' ? 'bg-green-600 text-white' : 'text-gray-500'
+              }`}
+          >
+            EN
+          </Link>
+        </div>
         {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(true)}
